@@ -1,11 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { getContacts } from '../contact';
+import { getContacts, createContact } from '../contact';
 
 async function loader() {
   const contacts = await getContacts();
   return contacts;
 }
+console.log(createContact());
+
 console.log(loader());
 
 export default function Root() {
