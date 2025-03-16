@@ -9,4 +9,18 @@ export default function Contact() {
     notes: 'Some notes',
     favorite: true,
   };
+
+  return (
+    <div id="contact">
+      <div>
+        <img
+          key={contact.avatar}
+          src={
+            contact.avatar ||
+            `https://robohash.org/${contact.id}.png?size=200x200`
+          }
+        />
+      </div>
+    </div>
+  );
 }
