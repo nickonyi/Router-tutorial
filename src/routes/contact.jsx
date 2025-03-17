@@ -61,7 +61,7 @@ export default function Contact() {
   );
 }
 
-function Favorite({ contact }) {
+export function Favorite({ contact }) {
   const favorite = contact.favorite;
   return (
     <Form method="post">
