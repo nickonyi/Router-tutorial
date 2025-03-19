@@ -16,14 +16,11 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     loader: rootLoader,
+    action: rootAction,
     children: [
       {
         path: 'contacts/:contactId',
         element: <Contact />,
-      },
-      {
-        path: 'contacts/:contactId/edit',
-        element: <EditContact />,
         loader: contactLoader,
       },
     ],

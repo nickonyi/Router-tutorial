@@ -2,8 +2,8 @@ import { Form, useLoaderData } from 'react-router-dom';
 import { getContacts } from '../contact';
 
 export async function loader({ params }) {
-  const contact = await getContacts(params.contactId);
-  return { contact };
+  const contacts = await getContacts(params.contactId);
+  return { contacts };
 }
 
 export default function Contact() {
@@ -13,7 +13,7 @@ export default function Contact() {
     <div id="contact">
       <div>
         <img
-          key={contact.avatar}
+          key={contact.id}
           src={
             contact.avatar ||
             `https://robohash.org/${contact.id}.png?size=200x200`

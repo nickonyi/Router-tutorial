@@ -2,19 +2,18 @@ import { Outlet, useLoaderData, Link, Form } from 'react-router-dom';
 import { getContacts, createContact } from '../contact.js';
 import { Favorite } from './contact.jsx';
 
-
-export async function loader (){
+export async function loader() {
   const contacts = await getContacts();
-  return {contacts}
+  return { contacts };
 }
 
-export async function action (){
+export async function action() {
   const contact = await createContact();
-  return {contact}
+  return { contact };
 }
 
 export default function Root() {
- const {contacts} = useLoaderData();
+  const { contacts } = useLoaderData();
 
   return (
     <>
